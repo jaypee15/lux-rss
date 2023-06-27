@@ -1,0 +1,30 @@
+# Ignore compiled Python files
+*.pyc
+__pycache__/
+
+# Ignore the virtual environment
+venv/
+.env
+
+# Ignore the Django settings file
+/myproject/settings.py
+
+# Ignore database files
+db.sqlite3
+
+# Ignore static files and media uploads
+/staticfiles/
+/media/
+
+# Ignore log files
+*.log
+
+# Ignore IDE and editor files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Ignore dependencies
+/node_modules/
+/yarn-error.log
