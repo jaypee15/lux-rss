@@ -12,8 +12,11 @@ class Article(models.Model):
     content = models.TextField()
     description= models.TextField(default='') #remove -> same as summary
     published_date = models.DateTimeField()
-    feed = models.ForeignKey(Feed, on_delete=models.CASCADE)
+    feed = models.ForeignKey(Feed, related_name='articles', on_delete=models.CASCADE)
     url = models.URLField(default='') #remove default and add unique
+    image = models.URLField(blank=True, null=True)
+
+
 
     def __str__(self):
         return self.title
