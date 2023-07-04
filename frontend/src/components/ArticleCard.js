@@ -14,6 +14,8 @@ export default function ArticleCard(props) {
     return (
    
             <div>
+                    {/* {console.log(props.source_image)} */}
+
               
                     <Card minW='100px' minH='300px'> 
 
@@ -60,7 +62,17 @@ export default function ArticleCard(props) {
                         </CardHeader>
                         <Box onClick={() => setIsOpen(true)}>
                         <CardBody py={0} >
-                            <Text>{props.title}</Text>
+                            <Text
+                               fontSize="xl"
+                               fontWeight="bold"
+                               lineHeight="shorter"
+                               minHeight="2.5em"
+                               maxHeight="2.5em"
+                               overflow="hidden"
+                               textOverflow="ellipsis"
+                              
+                              >
+                                {props.title}</Text>
                             <Box>
                               <Text fontSize="sm"  fontWeight="normal">
                                 {timeSincePublished(props.published_date)}</Text>

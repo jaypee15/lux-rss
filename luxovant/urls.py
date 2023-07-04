@@ -8,13 +8,15 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 router = routers.DefaultRouter()
-router.register(r'feeds', FeedViewSet)
-router.register(r'articles', ArticleViewSet)
+router.register('api/feeds', FeedViewSet)
+router.register('api/articles', ArticleViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('auth/', include("rss_feed.urls")),
     path('', include(router.urls)),
 ]
+
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL,

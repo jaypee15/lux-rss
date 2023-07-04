@@ -13,7 +13,7 @@ function ArticleList() {
   function fetchArticles() {
     axios({
       method: "GET",
-      url: "/articles",
+      url: "/api/articles",
     })
       .then((response) => {
         const data = response.data;
@@ -27,6 +27,8 @@ function ArticleList() {
           console.log(error.response.headers);
         }
       });
+      
+  
   }
 
   return (
@@ -42,6 +44,9 @@ function ArticleList() {
               url={article.link}
               published_date={article.published_date}
               image={article.image}
+              source_image={article.feed.source_image}
+              
+            
             />
           ))}
       </SimpleGrid>

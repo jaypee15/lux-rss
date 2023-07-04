@@ -4,6 +4,7 @@ __pycache__/
 
 # Ignore the virtual environment
 venv/
+.venv
 .env
 
 # Ignore the Django settings file
