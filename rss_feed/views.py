@@ -21,7 +21,7 @@ class FeedViewSet(viewsets.ModelViewSet):
     serializer_class = FeedSerializer
 
 class ArticleViewSet(viewsets.ModelViewSet):
-    queryset = Article.objects.all()
+    queryset = Article.objects.all().order_by("-published_date")
     serializer_class = ArticleSerializer
 
 
@@ -32,7 +32,7 @@ class MyTokenObtainPairView(TokenObtainPairView):
 
 class RegisterView(generics.CreateAPIView):
     queryset = User.objects.all()
-    permission_classes = (AllowAny,)
+    permission_classes = (AllowAny)
     serializer_class = RegisterSerializer
 
 

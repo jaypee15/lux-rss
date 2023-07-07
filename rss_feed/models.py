@@ -19,7 +19,7 @@ class Article(models.Model):
     rss_feed_name = models.CharField(max_length=100, blank=True)
     guid = models.CharField(max_length=100, blank=True)
     tags = models.CharField(max_length=100, blank=True)
-
+    source_image = models.URLField(blank=True)
 
 
     def __str__(self):

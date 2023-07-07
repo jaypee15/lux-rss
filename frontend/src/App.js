@@ -24,6 +24,7 @@ import PrivateRoute from './layouts/PrivateRoute';
 import Logout from './components/logout';
 import Private from './components/Private';
 import Register from './components/Register';
+import Profile from './components/Profile';
 
 function App() {
     return (
@@ -35,6 +36,14 @@ function App() {
                         element={
                             <PrivateRoute>
                                 <Private />
+                            </PrivateRoute>
+                        }
+                    />
+                      <Route
+                        path="/profile"
+                        element={
+                            <PrivateRoute>
+                                <Profile />
                             </PrivateRoute>
                         }
                     />
