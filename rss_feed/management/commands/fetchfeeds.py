@@ -52,7 +52,7 @@ class Command(BaseCommand):
                 html_tags.extend(html_tag)
     
             
-        print('html_tags:', html_tags)
+        logger.info(f'bs4 tags: {html_tags}')
         combined_tags = list((set(rss_tags + html_tags)))
 
         return combined_tags
@@ -62,7 +62,11 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         feeds = Feed.objects.all() 
         for feed in feeds:
-            feed_data = feedparser.parse(feed.url)
+            try:
+                feed_data = feedparser.parse(feed.url) 
+            except Exception as e:
+                # better handling of exception
+                logger.info(f'An error occured: {str(e)}')
             for entry in feed_data.entries:
                 guid = entry.get('id', None)
                 link = entry.link
@@ -81,9 +85,9 @@ class Command(BaseCommand):
                 content = entry.summary
                 image = self.scrape_image(link)
                 rss_tags = entry.tags[0].term.split(',') if entry.tags else []
-                print('rss tags:', rss_tags)
+                logger.info(f'rss tags for {feed.title}:{rss_tags}')
                 tags = self.get_tags(link, rss_tags)
-                print('combined tags:',tags)
+                logger.info(f'combined tags for {feed.title}:{tags}')
 
                 try:
                     published_date = datetime.strptime(entry.published, '%a, %d %b %Y %H:%M:%S %z').replace(tzinfo=timezone.utc)
