@@ -1,21 +1,6 @@
-// import './App.css';
-
-
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <Feed />
-      
-//     </div>
-//   );
-// }
-
-// export default App;
-
 
 import './App.css';
-import { Route, Routes, BrowserRouter } from 'react-router-dom';
+import { Route, Routes, BrowserRouter,} from 'react-router-dom';
 import Home from './pages/Home';
 import Feed from './pages/Feed';
 import MainWrapper from './layouts/MainWrapper';
@@ -25,8 +10,10 @@ import Logout from './components/logout';
 import Private from './components/Private';
 import Register from './components/Register';
 import Profile from './components/Profile';
+import ArticleModal from './components/ArticleModal';
 
 function App() {
+
     return (
         <BrowserRouter>
             <MainWrapper>
@@ -48,11 +35,13 @@ function App() {
                         }
                     />
                     <Route path="/" element={<Home />} />
-                    <Route path="/feed" element={<Feed />} />
+                    <Route path="/feed/*" element={<Feed />} />
+                    <Route path="/feed/:id/*" element={<ArticleModal />} />
                     <Route path="/login" element={<Login />} />
                     <Route path="/register" element={<Register />} />
                     <Route path="/logout" element={<Logout />} />
                 </Routes>
+                
             </MainWrapper>
         </BrowserRouter>
     );

@@ -105,10 +105,10 @@ class Command(BaseCommand):
             logger.info(f'Successfully fetched and parsed RSS feeds for {feed.title}') # opposite  
 
 
-        try:
-            logger.info("Starting feedfetcher...")
+        # try:
+        #     logger.info("Starting feedfetcher...")
            
-        except KeyboardInterrupt:
-            logger.info("Stopping feedfetcher...")
+        # except KeyboardInterrupt:
+        #     logger.info("Stopping feedfetcher...")
             
           

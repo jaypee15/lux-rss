@@ -5,6 +5,8 @@ import { Grid, GridItem, Flex, Box, Spacer } from '@chakra-ui/react'
 
 
 function Feed() {
+
+  
   return (
     <div className="Feed" style={{ background: '#0b1626' }}>
 

@@ -3,7 +3,7 @@ from django.db import models
 class Feed(models.Model):
     title = models.CharField(max_length=200)
     url = models.URLField(unique=True)
-    source_image = models.ImageField(blank=True, upload_to='media')
+    source_image = models.ImageField(blank=True, )
     
 
     def __str__(self):
