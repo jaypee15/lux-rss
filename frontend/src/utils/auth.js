@@ -3,9 +3,10 @@ import axios from './axios';
 import jwt_decode from 'jwt-decode';
 import Cookies from 'js-cookie';
 
+const apiUrl = process.env.REACT_APP_API_URL || ""
 export const login = async (username, password) => {
     try {
-        const { data, status } = await axios.post('login/', {
+        const { data, status } = await axios.post(`${apiUrl}/login/`, {
             username,
             password,
         });
@@ -23,7 +24,7 @@ export const login = async (username, password) => {
 
 export const register = async (username, password, password2) => {
     try {
-        const { data } = await axios.post('register/', {
+        const { data } = await axios.post(`${apiUrl}/register/`, {
             username,
             password,
             password2,

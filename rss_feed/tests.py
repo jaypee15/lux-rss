@@ -18,5 +18,3 @@ class FeedAPITestCase(TestCase):
         response = self.client.get(reverse('feed-detail', args=[self.feed.id]))
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.data['title'], self.feed.title)
-
-    # Write similar tests for article endpoints
