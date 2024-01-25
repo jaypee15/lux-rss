@@ -34,7 +34,7 @@ function App() {
                             </PrivateRoute>
                         }
                     />
-                    <Route path="/" element={<Home />} />
+                    <Route path="/" element={<Feed/>} />   {/* Home */}
                     <Route path="/feed/*" element={<Feed />} />
                     <Route path="/feed/:id/*" element={<ArticleModal />} />
                     <Route path="/login" element={<Login />} />

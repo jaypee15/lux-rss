@@ -9,7 +9,7 @@ function BadgeComponent ({ tag }) {
       bg="gray.200"
       color="black"
       fontWeight="400"
-      mr={2}
+      mr={2}cls
       rounded={'xl'}
     >
       #{tag}

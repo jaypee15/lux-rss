@@ -14,9 +14,10 @@ function ArticleList() {
   }, []);
 
   function fetchArticles() {
+    const apiUrl = process.env.REACT_APP_API_URL || ""
     axios({
       method: "GET",
-      url: "/api/articles",
+      url: `${apiUrl}/api/articles`,
     })
       .then((response) => {
         const data = response.data;

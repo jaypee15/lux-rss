@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'rest_framework_simplejwt.token_blacklist',
+    'django_apscheduler',
+    'background_task',
 ]
 
 MIDDLEWARE = [
@@ -60,7 +62,7 @@ ROOT_URLCONF = 'luxovant.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates'], # might change to empty later
+        'DIRS': [BASE_DIR / 'build'], 
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -197,3 +199,4 @@ LOGGING = {
         "level": "INFO",
     },
 }
+

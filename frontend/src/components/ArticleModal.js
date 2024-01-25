@@ -104,7 +104,7 @@ return(
       
   </Card>
 
-    <Stack align="center" justify="center" direction="row" mt={6}>
+    <Stack align="center" justify="center" direction="row" mt={6} flexWrap='wrap'>
       {tagsArray.map((tag, index) => (
       <BadgeComponent key={index} tag={tag} />
     ))}
